@@ -8,9 +8,11 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
+    "@storybook/addon-a11y": "^6.5.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "windstitch": "^0.3.0"
@@ -23,6 +25,7 @@
     "@storybook/addon-links": "^6.5.16",
     "@storybook/builder-vite": "^0.4.2",
     "@storybook/react": "^6.5.16",
+    "@storybook/storybook-deployer": "^2.8.16",
     "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
