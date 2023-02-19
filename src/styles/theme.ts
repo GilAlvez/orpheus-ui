@@ -79,7 +79,7 @@ export const colors = {
   "warning-900":   "#713F12",
 } as const;
 
-/* export const negativeSpacing = {
+export const negativeSpace = {
   "-px": "-1px",
   "-1": "-0.25rem",
   "-2": "-0.5rem",
@@ -101,7 +101,7 @@ export const colors = {
   '-72': "18rem",
   '-80': "20rem",
   '-96': "24rem",
-} as const; */
+} as const;
 
 export const space = {
   px: "1px",
@@ -210,3 +210,11 @@ export const zIndices = {
   40: "40",
   50: "50",
 } as const;
+
+// ------------ EXTENDS ------------ //
+
+export const extendMargin = {
+  auto: "auto",
+  ...space,
+  ...negativeSpace,
+};

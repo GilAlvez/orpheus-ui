@@ -1,4 +1,4 @@
-import {createStitches} from '@stitches/react'
+import {createStitches, defaultThemeMap} from '@stitches/react'
 
 import * as utils from './utils'
 import * as theme from './theme'
@@ -17,10 +17,16 @@ export const { styled, globalCss } = createStitches({
     fontWeights: theme.fontWeights,
     lineHeights: theme.lineHeights,
     zIndices: theme.zIndices,
+
+    extendMargin: theme.extendMargin
   },
   utils: {
     ...utils
   },
+  themeMap: {
+    ...defaultThemeMap,
+    margin: 'extendMargin',
+  }
 })
 
 
