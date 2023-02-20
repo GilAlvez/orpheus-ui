@@ -79,7 +79,7 @@ export const colors = {
   "warning-900":   "#713F12",
 } as const;
 
-export const negativeSpace = {
+const negativeSpace = {
   "-px": "-1px",
   "-1": "-0.25rem",
   "-2": "-0.5rem",

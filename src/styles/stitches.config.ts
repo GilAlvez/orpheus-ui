@@ -3,7 +3,7 @@ import {createStitches, defaultThemeMap} from '@stitches/react'
 import * as utils from './utils'
 import * as theme from './theme'
 
-export const { styled, globalCss } = createStitches({
+export const { styled, globalCss, createTheme, getCssText } = createStitches({
   media: theme.screens,
   theme: {
     colors: theme.colors,
@@ -27,6 +27,11 @@ export const { styled, globalCss } = createStitches({
     ...defaultThemeMap,
     margin: 'extendMargin',
   }
+})
+
+export const dark = 'html.dark &' // CSS selector for dark theme
+createTheme('dark', {
+  ...theme
 })
 
 
