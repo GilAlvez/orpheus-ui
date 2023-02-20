@@ -1,0 +1,17 @@
+{
+	"editor.tabSize": 2,
+	"editor.tabCompletion": "on",
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": true,
+		"source.fixAll.eslint": true,
+		"source.fixAll.format": true
+	},
+	"workbench.tree.indent": 15,
+	"editor.quickSuggestions": {
+		"strings": true
+	},
+	"explorer.compactFolders": false,
+}
