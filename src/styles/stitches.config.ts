@@ -1,5 +1,7 @@
 import { createStitches, defaultThemeMap } from '@stitches/react'
 
+import { fontFace } from './fontFace'
+import { normalize } from './normalize'
 import * as theme from './theme'
 import * as utils from './utils'
 
@@ -34,10 +36,7 @@ createTheme('dark', {
 	...theme,
 })
 
-/* globalCss({
-  '@import': 'normalize.css',
-  '@font-face': {
-    fontFamily: 'Inter',
-    src: 'local("Inter"), url("Inter.woff2")',
-  },
-}); */
+export const globalStyles = globalCss({
+	...normalize,
+	...fontFace,
+})
