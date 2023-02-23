@@ -1,6 +1,10 @@
 export const normalize = {
 	'*, ::after, ::before': {
 		boxSizing: 'border-box',
+		borderWidth: 0,
+		borderStyle: 'solid',
+		margin: 0,
+		padding: 0,
 	},
 
 	html: {
@@ -9,12 +13,17 @@ export const normalize = {
 	},
 
 	body: {
-		margin: '0',
-		fontFamily: "Inter, Montserrat, 'Segoe UI Emoji', sans-serif",
+		fontFamily: 'Inter, sans-serif',
+		lineHeight: 'inherit',
+	},
+
+	'h1, h2, h3, h4, h5, h6': {
+		fontSize: 'inherit',
+		fontWeight: 'inherit',
 	},
 
 	hr: {
-		height: '0',
+		height: 0,
 		color: 'inherit',
 	},
 
@@ -41,20 +50,20 @@ export const normalize = {
 
 	sub: {
 		fontSize: '75%',
-		lineHeight: '0',
+		lineHeight: 0,
 		position: 'relative',
 		bottom: '-0.25em',
 	},
 
 	sup: {
 		fontSize: '75%',
-		lineHeight: '0',
+		lineHeight: 0,
 		position: 'relative',
 		top: '-0.5em',
 	},
 
 	table: {
-		textIndent: '0',
+		textIndent: 0,
 		borderColor: 'inherit',
 	},
 
@@ -62,7 +71,6 @@ export const normalize = {
 		fontFamily: 'inherit',
 		fontSize: '100%',
 		lineHeight: '1.15',
-		margin: '0',
 	},
 
 	'button, select': {
@@ -71,12 +79,13 @@ export const normalize = {
 
 	'[type="button"], [type="reset"], [type="submit"], button': {
 		appearance: 'button',
-		border: '0',
+		backgroundColor: 'transparent',
+		backgroundImage: 'none',
+		cursor: 'pointer',
 	},
 
 	'::-moz-focus-inner': {
 		borderStyle: 'none',
-		padding: '0',
 	},
 
 	':-moz-focusring': {
@@ -85,10 +94,6 @@ export const normalize = {
 
 	':-moz-ui-invalid': {
 		boxShadow: 'none',
-	},
-
-	legend: {
-		padding: '0',
 	},
 
 	'::-webkit-inner-spin-button, ::-webkit-outer-spin-button': {
@@ -111,5 +116,9 @@ export const normalize = {
 
 	summary: {
 		display: 'list-item',
+	},
+
+	'[hidden]': {
+		display: 'none',
 	},
 }
