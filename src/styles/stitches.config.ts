@@ -1,6 +1,5 @@
 import { createStitches, defaultThemeMap } from '@stitches/react'
 
-import { fontFace } from './fontFace'
 import { normalize } from './normalize'
 import * as theme from './theme'
 import * as utils from './utils'
@@ -38,5 +37,4 @@ createTheme('dark', {
 
 export const globalStyles = globalCss({
 	...normalize,
-	...fontFace,
 })
