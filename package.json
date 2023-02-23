@@ -10,12 +10,11 @@
 		"dist"
 	],
 	"scripts": {
-		"lint": "eslint src --fix",
-		"dev": "vite",
+		"dev": "start-storybook -p 6006",
 		"build": "rollup -c",
 		"test": "vitest",
+		"lint": "eslint src --fix",
 		"coverage": "vitest run --coverage",
-		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
 		"deploy-storybook": "storybook-to-ghpages"
 	},
@@ -25,6 +24,7 @@
 	},
 	"devDependencies": {
 		"@babel/core": "^7.20.12",
+		"@fontsource/inter": "^4.5.15",
 		"@rollup/plugin-commonjs": "^24.0.1",
 		"@rollup/plugin-node-resolve": "^15.0.1",
 		"@rollup/plugin-terser": "^0.4.0",
