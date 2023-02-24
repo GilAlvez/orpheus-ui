@@ -1,4 +1,3 @@
-import { themes } from '@storybook/theming'
 import { globalStyles } from '../src/styles/stitches.config'
 
 import '@fontsource/inter/300.css'
@@ -16,8 +15,5 @@ export const parameters = {
 			color: /(background|color)$/i,
 			date: /Date$/,
 		},
-	},
-	docs: {
-		theme: themes.dark,
 	},
 }
