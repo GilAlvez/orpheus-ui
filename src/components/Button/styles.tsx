@@ -1,5 +1,8 @@
 import { styled } from '../../styles/stitches.config'
 
+// Iterable colors that isnt dark, light or disabled
+const colors = ['primary', 'secondary', 'success', 'error', 'warning']
+
 export const Icon = styled('span', {
 	fontSize: '$2xl',
 	lineHeight: '$none',
@@ -29,11 +32,12 @@ export const Button = styled('button', {
 	borderWidth: 1,
 	borderRadius: '$sm',
 	borderColor: 'transparent',
+	boxShadow: '$sm',
 	transitionProperty: 'all',
 	transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
 	transitionDuration: '300ms',
 	textDecorationLine: 'none',
-	outlineStyle: '2px solid transparent',
+	outline: '2px solid transparent',
 	outlineOffset: 0,
 	'&:active': {
 		transitionProperty: 'none',
@@ -46,8 +50,6 @@ export const Button = styled('button', {
 			success: {},
 			error: {},
 			warning: {},
-			dark: {},
-			light: {},
 		},
 		variant: {
 			filled: {},
@@ -96,6 +98,65 @@ export const Button = styled('button', {
 		variant: 'filled',
 	},
 	compoundVariants: [
+		...colors.map((color) => ({
+			variant: 'filled',
+			color,
+			css: {
+				color: '$white',
+				backgroundColor: `$${color}500`,
+				'&:hover': {
+					backgroundColor: `$${color}600`,
+				},
+				'&:focus': {
+					outlineColor: `$${color}300`,
+				},
+				'&:active': {
+					backgroundColor: `$${color}500`,
+					outlineWidth: '3px',
+					boxShadow: '$none',
+				},
+			},
+		})),
+		...colors.map((color) => ({
+			variant: 'outlined',
+			color,
+			css: {
+				color: `$${color}500`,
+				backgroundColor: 'transparent',
+				_addBorderColorWithOpacity: `${color}500/90`,
+				'&:hover': {
+					_addBackgroundWithOpacity: `${color}500/08`,
+					borderColor: `$${color}500`,
+				},
+				'&:focus': {
+					_addBackgroundWithOpacity: `${color}500/08`,
+					outlineColor: `$${color}200`,
+				},
+				'&:active': {
+					backgroundColor: '$transparent',
+					outlineWidth: '3px',
+					boxShadow: '$none',
+				},
+			},
+		})),
+		...colors.map((color) => ({
+			variant: 'text',
+			color,
+			css: {
+				color: `$${color}500`,
+				backgroundColor: 'transparent',
+				boxShadow: '$none',
+				'&:hover': {
+					_addBackgroundWithOpacity: `${color}500/05`,
+				},
+				'&:focus': {
+					_addBackgroundWithOpacity: `${color}500/10`,
+				},
+				'&:active': {
+					_addBackgroundWithOpacity: `${color}500/15`,
+				},
+			},
+		})),
 		// DISABLED
 		{
 			disabled: true,
