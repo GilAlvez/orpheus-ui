@@ -3,7 +3,7 @@ import { forwardRef, type ButtonHTMLAttributes, type ForwardedRef, type ReactNod
 import * as S from './styles'
 
 export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-	color?: 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'dark' | 'light'
+	color?: 'primary' | 'secondary' | 'success' | 'error' | 'warning'
 	size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 	variant?: 'filled' | 'outlined' | 'text'
 	fullWidth?: boolean
