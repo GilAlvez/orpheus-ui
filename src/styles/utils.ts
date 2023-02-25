@@ -1,3 +1,5 @@
+import { colors } from './theme'
+
 const gridColumns = {
 	0: 'none',
 	1: 'repeat(1, minmax(0, 1fr))',
@@ -36,3 +38,53 @@ const scale = {
 export const _scale = (value: keyof typeof scale) => ({
 	transform: `scale(${scale[value]})`,
 })
+
+// export const _transitionAll = (value: keyof typeof transitionAll) => ({})
+
+export const _addBackgroundWithOpacity = (value: string) => {
+	const valueSplited = value.split('/')
+
+	const color = valueSplited[0] as keyof typeof colors
+	const opacity = valueSplited[1]
+
+	const querySelectorColor = (color: keyof typeof colors) => {
+		if (color in colors) {
+			return colors[color]
+		} else {
+			return null
+		}
+	}
+	return { backgroundColor: `${querySelectorColor(color)}${opacity}` }
+}
+
+export const _addColorWithOpacity = (value: string) => {
+	const valueSplited = value.split('/')
+
+	const color = valueSplited[0] as keyof typeof colors
+	const opacity = valueSplited[1]
+
+	const querySelectorColor = (color: keyof typeof colors) => {
+		if (color in colors) {
+			return colors[color]
+		} else {
+			return null
+		}
+	}
+	return { color: `${querySelectorColor(color)}${opacity}` }
+}
+
+export const _addBorderColorWithOpacity = (value: string) => {
+	const valueSplited = value.split('/')
+
+	const color = valueSplited[0] as keyof typeof colors
+	const opacity = valueSplited[1]
+
+	const querySelectorColor = (color: keyof typeof colors) => {
+		if (color in colors) {
+			return colors[color]
+		} else {
+			return null
+		}
+	}
+	return { borderColor: `${querySelectorColor(color)}${opacity}` }
+}
