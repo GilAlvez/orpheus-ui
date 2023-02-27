@@ -39,52 +39,51 @@ export const _scale = (value: keyof typeof scale) => ({
 	transform: `scale(${scale[value]})`,
 })
 
-// export const _transitionAll = (value: keyof typeof transitionAll) => ({})
-
-export const _addBackgroundWithOpacity = (value: string) => {
-	const valueSplited = value.split('/')
-
-	const color = valueSplited[0] as keyof typeof colors
-	const opacity = valueSplited[1]
-
-	const querySelectorColor = (color: keyof typeof colors) => {
-		if (color in colors) {
-			return colors[color]
-		} else {
-			return null
-		}
+// Colors with opacity utilities
+function decimalToHexadecimal(valor: string) {
+	const decimal = parseFloat(valor.replace(',', '.'))
+	if (isNaN(decimal) || decimal < 0 || decimal > 100) {
+		throw new Error('The value of decimal must be a number between 0 and 100')
 	}
-	return { backgroundColor: `${querySelectorColor(color)}${opacity}` }
+
+	const hexadecimal = Math.round((decimal * 255) / 100).toString(16)
+
+	return hexadecimal.padStart(2, '0').slice(0, 2)
+}
+function querySelectorColor(color: keyof typeof colors) {
+	if (color in colors) {
+		return colors[color]
+	} else {
+		return null
+	}
 }
 
-export const _addColorWithOpacity = (value: string) => {
+// value example: 'primary500/10'
+export const _backgroundWithOpacity = (value: string) => {
 	const valueSplited = value.split('/')
-
 	const color = valueSplited[0] as keyof typeof colors
 	const opacity = valueSplited[1]
 
-	const querySelectorColor = (color: keyof typeof colors) => {
-		if (color in colors) {
-			return colors[color]
-		} else {
-			return null
-		}
-	}
-	return { color: `${querySelectorColor(color)}${opacity}` }
+	return { backgroundColor: `${querySelectorColor(color)}${decimalToHexadecimal(opacity)}` }
 }
-
-export const _addBorderColorWithOpacity = (value: string) => {
+export const _colorWithOpacity = (value: string) => {
 	const valueSplited = value.split('/')
-
 	const color = valueSplited[0] as keyof typeof colors
 	const opacity = valueSplited[1]
 
-	const querySelectorColor = (color: keyof typeof colors) => {
-		if (color in colors) {
-			return colors[color]
-		} else {
-			return null
-		}
-	}
-	return { borderColor: `${querySelectorColor(color)}${opacity}` }
+	return { color: `${querySelectorColor(color)}${decimalToHexadecimal(opacity)}` }
+}
+export const _borderColorWithOpacity = (value: string) => {
+	const valueSplited = value.split('/')
+	const color = valueSplited[0] as keyof typeof colors
+	const opacity = valueSplited[1]
+
+	return { borderColor: `${querySelectorColor(color)}${decimalToHexadecimal(opacity)}` }
+}
+export const _outlineColorWithOpacity = (value: string) => {
+	const valueSplited = value.split('/')
+	const color = valueSplited[0] as keyof typeof colors
+	const opacity = valueSplited[1]
+
+	return { outlineColor: `${querySelectorColor(color)}${decimalToHexadecimal(opacity)}` }
 }
