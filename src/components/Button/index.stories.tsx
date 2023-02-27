@@ -69,6 +69,11 @@ export default {
 				disable: true,
 			},
 		},
+		ref: {
+			table: {
+				disable: true,
+			},
+		},
 	},
 } as Meta<IButtonProps>
 
@@ -97,6 +102,6 @@ export const WithIcon: StoryObj<IButtonProps> = {
 	name: 'With Icons',
 	args: {
 		children: 'With Icon',
-		iconStart: <Plus />,
+		icon: <Plus />,
 	},
 }
