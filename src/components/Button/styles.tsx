@@ -3,12 +3,6 @@ import { styled } from '../../styles/stitches.config'
 // Iterable colors that isnt dark, light or disabled
 const colors = ['primary', 'secondary', 'success', 'error', 'warning']
 
-export const Icon = styled('span', {
-	display: 'inline-flex',
-	fontSize: '$2xl',
-	lineHeight: '$none',
-})
-
 export const Button = styled('button', {
 	// Layout
 	display: 'inline-flex',
@@ -68,6 +62,9 @@ export const Button = styled('button', {
 				width: '100%',
 			},
 		},
+		hasIcon: {
+			true: {},
+		},
 		size: {
 			xs: {
 				height: '$6',
@@ -75,9 +72,11 @@ export const Button = styled('button', {
 				paddingRight: '$2',
 				borderRadius: '$xs',
 				fontSize: '$sm',
+				fontWeight: '$medium',
+				gap: '$1',
 			},
 			sm: {
-				height: '$8',
+				height: '$9',
 				paddingLeft: '$4',
 				paddingRight: '$4',
 			},
@@ -88,13 +87,15 @@ export const Button = styled('button', {
 			},
 			lg: {
 				height: '$14',
-				paddingLeft: '$8',
-				paddingRight: '$8',
+				paddingLeft: '$7',
+				paddingRight: '$7',
+				fontSize: '$lg',
 			},
 			xl: {
 				height: '$16',
-				paddingLeft: '$10',
-				paddingRight: '$10',
+				paddingLeft: '$7',
+				paddingRight: '$7',
+				fontSize: '$xl',
 			},
 		},
 	},
@@ -104,6 +105,21 @@ export const Button = styled('button', {
 		variant: 'filled',
 	},
 	compoundVariants: [
+		{
+			hasIcon: true,
+			size: 'xs',
+			css: {
+				paddingLeft: '$2',
+			},
+		},
+		{
+			hasIcon: true,
+			size: 'md',
+			css: {
+				paddingLeft: '$4',
+			},
+		},
+
 		...colors.map((color) => ({
 			variant: 'filled',
 			color,
@@ -114,7 +130,7 @@ export const Button = styled('button', {
 					backgroundColor: `$${color}600`,
 				},
 				'&:focus': {
-					outlineColor: `$${color}300`,
+					_outlineColorWithOpacity: `${color}300/95`,
 				},
 				'&:active': {
 					backgroundColor: `$${color}500`,
@@ -129,14 +145,14 @@ export const Button = styled('button', {
 			css: {
 				color: `$${color}500`,
 				backgroundColor: 'transparent',
-				_addBorderColorWithOpacity: `${color}500/90`,
+				_borderColorWithOpacity: `${color}500/90`,
 				'&:hover': {
-					_addBackgroundWithOpacity: `${color}500/08`,
+					_backgroundWithOpacity: `${color}500/10`,
 					borderColor: `$${color}500`,
 				},
 				'&:focus': {
-					_addBackgroundWithOpacity: `${color}500/08`,
-					outlineColor: `$${color}200`,
+					_backgroundWithOpacity: `${color}500/10`,
+					_outlineColorWithOpacity: `${color}300/80`,
 				},
 				'&:active': {
 					backgroundColor: '$transparent',
@@ -153,13 +169,13 @@ export const Button = styled('button', {
 				backgroundColor: 'transparent',
 				boxShadow: '$none',
 				'&:hover': {
-					_addBackgroundWithOpacity: `${color}500/05`,
+					_backgroundWithOpacity: `${color}500/15`,
 				},
 				'&:focus': {
-					_addBackgroundWithOpacity: `${color}500/10`,
+					_backgroundWithOpacity: `${color}500/15`,
 				},
 				'&:active': {
-					_addBackgroundWithOpacity: `${color}500/15`,
+					_backgroundWithOpacity: `${color}500/25`,
 				},
 			},
 		})),
@@ -193,4 +209,32 @@ export const Button = styled('button', {
 			},
 		},
 	],
+})
+
+export const Icon = styled('span', {
+	display: 'inline-flex',
+	lineHeight: '$none',
+
+	variants: {
+		size: {
+			xs: {
+				fontSize: '$lg',
+			},
+			sm: {
+				fontSize: '$xl',
+			},
+			md: {
+				fontSize: '$2xl',
+			},
+			lg: {
+				fontSize: '$2xl',
+			},
+			xl: {
+				fontSize: '$3xl',
+			},
+		},
+	},
+	defaultVariants: {
+		size: 'md',
+	},
 })
