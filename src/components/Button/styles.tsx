@@ -63,6 +63,11 @@ export const Button = styled('button', {
 				cursor: 'default',
 			},
 		},
+		fullWidth: {
+			true: {
+				width: '100%',
+			},
+		},
 		size: {
 			xs: {
 				height: '$6',
