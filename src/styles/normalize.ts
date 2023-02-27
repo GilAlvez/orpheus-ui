@@ -10,6 +10,12 @@ export const normalize = {
 	html: {
 		tabSize: '4',
 		lineHeight: '1.15',
+		'-webkit-tap-highlight-color': 'transparent',
+		'text-rendering': 'optimizeLegibility',
+		'-webkit-font-smoothing': 'antialiased',
+		'-moz-osx-font-smoothing': 'grayscale',
+		'-webkit-text-size-adjust': 'none',
+		'text-size-adjust': 'none',
 	},
 
 	body: {
