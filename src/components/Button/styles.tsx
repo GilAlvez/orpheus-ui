@@ -4,6 +4,7 @@ import { styled } from '../../styles/stitches.config'
 const colors = ['primary', 'secondary', 'success', 'error', 'warning']
 
 export const Icon = styled('span', {
+	display: 'inline-flex',
 	fontSize: '$2xl',
 	lineHeight: '$none',
 })
@@ -14,7 +15,7 @@ export const Button = styled('button', {
 	flexShrink: 0,
 	alignItems: 'center',
 	justifyContent: 'center',
-	gap: '$3',
+	gap: '$2',
 	flexWrap: 'nowrap',
 	whiteSpace: 'nowrap',
 
@@ -22,7 +23,7 @@ export const Button = styled('button', {
 	fontFamily: '$inter',
 	fontSize: '$base',
 	lineHeight: '$none',
-	fontWeight: 'medium',
+	fontWeight: '$medium',
 
 	// Interaction
 	cursor: 'pointer',
