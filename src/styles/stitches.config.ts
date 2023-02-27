@@ -1,40 +1,44 @@
+import type * as Stitches from '@stitches/react'
 import { createStitches, defaultThemeMap } from '@stitches/react'
 
 import { normalize } from './normalize'
-import * as theme from './theme'
+import * as themeStyles from './theme'
 import * as utils from './utils'
 
-export const { styled, globalCss, createTheme, getCssText } = createStitches({
-	media: theme.screens,
-	theme: {
-		colors: theme.colors,
-		space: theme.space,
-		sizes: theme.sizes,
-		fonts: theme.fonts,
-		fontSizes: theme.fontSizes,
-		radii: theme.radii,
-		borderWidths: theme.borderWidths,
-		shadows: theme.shadows,
-		fontWeights: theme.fontWeights,
-		lineHeights: theme.lineHeights,
-		zIndices: theme.zIndices,
+export const { styled, css, getCssText, globalCss, keyframes, reset, createTheme, config, prefix, theme } =
+	createStitches({
+		media: themeStyles.screens,
+		theme: {
+			colors: themeStyles.colors,
+			space: themeStyles.space,
+			sizes: themeStyles.sizes,
+			fonts: themeStyles.fonts,
+			fontSizes: themeStyles.fontSizes,
+			radii: themeStyles.radii,
+			borderWidths: themeStyles.borderWidths,
+			shadows: themeStyles.shadows,
+			fontWeights: themeStyles.fontWeights,
+			lineHeights: themeStyles.lineHeights,
+			zIndices: themeStyles.zIndices,
 
-		extendMargin: theme.extendMargin,
-	},
-	utils: {
-		...utils,
-	},
-	themeMap: {
-		...defaultThemeMap,
-		margin: 'extendMargin',
-	},
-})
+			extendMargin: themeStyles.extendMargin,
+		},
+		utils: {
+			...utils,
+		},
+		themeMap: {
+			...defaultThemeMap,
+			margin: 'extendMargin',
+		},
+	})
 
 export const dark = 'html.dark &' // CSS selector for dark theme
 createTheme('dark', {
-	...theme,
+	...themeStyles,
 })
 
 export const globalStyles = globalCss({
 	...normalize,
 })
+
+export type CSS = Stitches.CSS<typeof config>
