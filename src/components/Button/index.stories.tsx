@@ -32,7 +32,7 @@ export default {
 			},
 		},
 		variant: {
-			options: ['filled', 'outlined', 'text'],
+			options: ['filled', 'outlined', 'ghost'],
 			control: {
 				type: 'inline-radio',
 			},
