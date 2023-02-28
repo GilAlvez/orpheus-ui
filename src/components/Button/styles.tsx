@@ -49,7 +49,7 @@ export const Button = styled('button', {
 		variant: {
 			filled: {},
 			outlined: {},
-			text: {},
+			ghost: {},
 		},
 		disabled: {
 			true: {
@@ -99,30 +99,12 @@ export const Button = styled('button', {
 			},
 		},
 	},
-	defaultVariants: {
-		color: 'primary',
-		size: 'md',
-		variant: 'filled',
-	},
 	compoundVariants: [
-		{
-			hasIcon: true,
-			size: 'xs',
-			css: {
-				paddingLeft: '$2',
-			},
-		},
-		{
-			hasIcon: true,
-			size: 'md',
-			css: {
-				paddingLeft: '$4',
-			},
-		},
-
+		// ALL COLORS MATCHING WITH VARIANTS
 		...colors.map((color) => ({
 			variant: 'filled',
 			color,
+			disabled: false,
 			css: {
 				color: '$white',
 				backgroundColor: `$${color}500`,
@@ -142,6 +124,7 @@ export const Button = styled('button', {
 		...colors.map((color) => ({
 			variant: 'outlined',
 			color,
+			disabled: false,
 			css: {
 				color: `$${color}500`,
 				backgroundColor: 'transparent',
@@ -162,8 +145,9 @@ export const Button = styled('button', {
 			},
 		})),
 		...colors.map((color) => ({
-			variant: 'text',
+			variant: 'ghost',
 			color,
+			disabled: false,
 			css: {
 				color: `$${color}500`,
 				backgroundColor: 'transparent',
@@ -186,7 +170,7 @@ export const Button = styled('button', {
 			css: {
 				backgroundColor: '$gray200',
 				color: '$gray400',
-				opacity: '0.90',
+				opacity: '0.80',
 			},
 		},
 		{
@@ -196,19 +180,40 @@ export const Button = styled('button', {
 				backgroundColor: 'transparent',
 				color: '$gray400',
 				borderColor: '$gray300',
-				opacity: '0.90',
+				opacity: '0.80',
 			},
 		},
 		{
 			disabled: true,
-			variant: 'text',
+			variant: 'ghost',
 			css: {
 				backgroundColor: 'transparent',
-				color: '$gray300',
-				opacity: '0.90',
+				color: '$gray400',
+				opacity: '0.80',
+				boxShadow: '$none',
+			},
+		},
+		// ICONS
+		{
+			hasIcon: true,
+			size: 'xs',
+			css: {
+				paddingLeft: '$2',
+			},
+		},
+		{
+			hasIcon: true,
+			size: 'md',
+			css: {
+				paddingLeft: '$4',
 			},
 		},
 	],
+	defaultVariants: {
+		color: 'primary',
+		size: 'md',
+		variant: 'filled',
+	},
 })
 
 export const Icon = styled('span', {
