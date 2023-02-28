@@ -13,7 +13,7 @@ export const Button = (props: IButtonProps) => {
 
 	const buttonRef = useRef<HTMLButtonElement>(null)
 
-	const handleKeyPress = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+	const handleKeyPress = (e: KeyboardEvent) => {
 		if (e.key === 'Enter' || e.key === ' ') {
 			buttonRef.current?.click()
 		}
