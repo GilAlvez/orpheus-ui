@@ -99,6 +99,11 @@ export const Button = styled('button', {
 			},
 		},
 	},
+	defaultVariants: {
+		color: 'primary',
+		size: 'md',
+		variant: 'filled',
+	},
 	compoundVariants: [
 		// ALL COLORS MATCHING WITH VARIANTS
 		...colors.map((color) => ({
@@ -209,11 +214,6 @@ export const Button = styled('button', {
 			},
 		},
 	],
-	defaultVariants: {
-		color: 'primary',
-		size: 'md',
-		variant: 'filled',
-	},
 })
 
 export const Icon = styled('span', {
