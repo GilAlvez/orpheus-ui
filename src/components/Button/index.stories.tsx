@@ -59,12 +59,12 @@ export default {
 				disable: true,
 			},
 		},
-		iconStart: {
+		hasIcon: {
 			table: {
 				disable: true,
 			},
 		},
-		iconEnd: {
+		icon: {
 			table: {
 				disable: true,
 			},
