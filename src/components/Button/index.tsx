@@ -8,7 +8,7 @@ export interface IButtonProps extends ComponentProps<typeof S.Button> {
 	icon?: ReactNode
 }
 
-export const Button = (props: IButtonProps) => {
+const Button = (props: IButtonProps) => {
 	const { children, icon, onKeyDown, ref, ...rest } = props
 
 	const buttonRef = useRef<HTMLButtonElement>(null)
@@ -26,3 +26,5 @@ export const Button = (props: IButtonProps) => {
 		</S.Button>
 	)
 }
+
+export default Button
