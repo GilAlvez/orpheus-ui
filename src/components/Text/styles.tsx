@@ -26,9 +26,9 @@ export const textBase = css({
 export const Display = styled('h1', textBase, {
 	variants: {
 		size: {
-			lg: { fontSize: '$7xl', lineHeight: '$12' },
-			md: { fontSize: '$6xl', lineHeight: '$11' },
-			sm: { fontSize: '$5xl', lineHeight: '$10' },
+			lg: { fontSize: '$7xl', lineHeight: '$none' },
+			md: { fontSize: '$6xl', lineHeight: '$none' },
+			sm: { fontSize: '$5xl', lineHeight: '$none' },
 		},
 	},
 })
@@ -36,9 +36,9 @@ export const Display = styled('h1', textBase, {
 export const Heading = styled('h2', textBase, {
 	variants: {
 		size: {
-			lg: { fontSize: '$4xl', lineHeight: '$9' },
-			md: { fontSize: '$3xl', lineHeight: '$8' },
-			sm: { fontSize: '$2xl', lineHeight: '$7' },
+			lg: { fontSize: '$4xl', lineHeight: '$tight' },
+			md: { fontSize: '$3xl', lineHeight: '$tight' },
+			sm: { fontSize: '$2xl', lineHeight: '$tight' },
 		},
 	},
 })
@@ -46,9 +46,9 @@ export const Heading = styled('h2', textBase, {
 export const Title = styled('h2', textBase, {
 	variants: {
 		size: {
-			lg: { fontSize: '$2xl', lineHeight: '$8' },
-			md: { fontSize: '$xl', lineHeight: '$7' },
-			sm: { fontSize: '$lg', lineHeight: '$6' },
+			lg: { fontSize: '$2xl', lineHeight: '$snug' },
+			md: { fontSize: '$xl', lineHeight: '$snug' },
+			sm: { fontSize: '$lg', lineHeight: '$snug' },
 		},
 	},
 })
@@ -56,9 +56,9 @@ export const Title = styled('h2', textBase, {
 export const Label = styled('label', textBase, {
 	variants: {
 		size: {
-			lg: { fontSize: '$base', lineHeight: '$6' },
-			md: { fontSize: '$sm', lineHeight: '$5' },
-			sm: { fontSize: '$xs', lineHeight: '$4' },
+			lg: { fontSize: '$base', lineHeight: '$normal' },
+			md: { fontSize: '$sm', lineHeight: '$normal' },
+			sm: { fontSize: '$xs', lineHeight: '$normal' },
 		},
 	},
 })
@@ -66,9 +66,9 @@ export const Label = styled('label', textBase, {
 export const Body = styled('p', textBase, {
 	variants: {
 		size: {
-			lg: { fontSize: '$lg', lineHeight: '$6' },
-			md: { fontSize: '$base', lineHeight: '$5' },
-			sm: { fontSize: '$sm', lineHeight: '$4' },
+			lg: { fontSize: '$lg', lineHeight: '$relaxed' },
+			md: { fontSize: '$base', lineHeight: '$relaxed' },
+			sm: { fontSize: '$sm', lineHeight: '$relaxed' },
 		},
 	},
 })
