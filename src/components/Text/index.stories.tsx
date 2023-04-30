@@ -7,7 +7,7 @@ interface TextStoryArgs extends ComponentProps<typeof Text.Body> {
 }
 
 const sizes = ['sm', 'md', 'lg']
-const weights = ['normal', 'semibold', 'bold']
+const weights = ['light', 'normal', 'medium', 'semibold', 'bold']
 
 const meta: Meta<TextStoryArgs> & { subcomponents: Record<string, Story> } = {
 	title: 'Components/Text',
@@ -65,7 +65,7 @@ export const Title = Template.bind({})
 Title.args = {
 	componentName: 'Title',
 	children: 'Title Text',
-	weight: 'semibold',
+	weight: 'medium',
 	as: 'h2',
 }
 
@@ -73,7 +73,7 @@ export const Label = Template.bind({})
 Label.args = {
 	componentName: 'Label',
 	children: 'Label Text',
-	weight: 'semibold',
+	weight: 'medium',
 	as: 'label',
 }
 
