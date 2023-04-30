@@ -148,7 +148,10 @@ export const fontSizes = {
 	'3xl': '1.875rem',
 	'4xl': '2.25rem',
 	'5xl': '3rem',
-	'6xl': '4rem',
+	'6xl': '3.75rem',
+	'7xl': '4.5rem',
+	'8xl': '6rem',
+	'9xl': '8rem',
 } as const
 
 export const fontWeights = {
@@ -203,6 +206,8 @@ export const lineHeights = {
 	8: '2rem',
 	9: '2.25rem',
 	10: '2.5rem',
+	11: '2.75rem',
+	12: '3rem',
 } as const
 
 export const zIndices = {
