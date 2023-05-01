@@ -22,6 +22,4 @@ const Title = createTextComponent('Title', S.Title)
 const Label = createTextComponent('Label', S.Label)
 const Body = createTextComponent('Body', S.Body)
 
-const Text = { Display, Heading, Title, Label, Body }
-
-export default Text
+export const Text = { Display, Heading, Title, Label, Body }
