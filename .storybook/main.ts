@@ -18,7 +18,7 @@ const config: StorybookConfig = {
 	},
 	async viteFinal(config, options) {
 		if (options.configType === 'PRODUCTION') {
-			config.base = '/orpheus-ui'
+			config.base = '/orpheus-ui/'
 		}
 		return config
 	},
