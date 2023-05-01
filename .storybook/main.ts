@@ -1,4 +1,6 @@
-module.exports = {
+import type { StorybookConfig } from '@storybook/react-vite'
+
+const config: StorybookConfig = {
 	stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
 	addons: [
 		'@storybook/addon-links',
@@ -14,9 +16,9 @@ module.exports = {
 	features: {
 		storyStoreV7: true,
 	},
-	viteFinal: (config, { configType }) => {
-		if (configType === 'PRODUCTION') {
-			config.base = '/orpheus-ui/'
+	async viteFinal(config, options) {
+		if (options.configType === 'PRODUCTION') {
+			config.base = '/orpheus-ui'
 		}
 		return config
 	},
@@ -24,3 +26,5 @@ module.exports = {
 		autodocs: true,
 	},
 }
+
+export default config

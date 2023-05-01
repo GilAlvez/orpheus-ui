@@ -1,6 +1,6 @@
 import { type ComponentProps } from '@stitches/react'
-import { type Meta, type Story } from '@storybook/react'
-import Text from '.'
+import { type Meta, type StoryFn } from '@storybook/react'
+import { Text } from '.'
 
 interface TextStoryArgs extends ComponentProps<typeof Text.Body> {
 	componentName: keyof typeof Text
@@ -9,7 +9,7 @@ interface TextStoryArgs extends ComponentProps<typeof Text.Body> {
 const sizes = ['sm', 'md', 'lg']
 const weights = ['light', 'normal', 'medium', 'semibold', 'bold']
 
-const meta: Meta<TextStoryArgs> & { subcomponents: Record<string, Story> } = {
+export default {
 	title: 'Components/Text',
 	subcomponents: {
 		Display: Text.Display,
@@ -29,9 +29,7 @@ const meta: Meta<TextStoryArgs> & { subcomponents: Record<string, Story> } = {
 		size: { control: 'inline-radio', options: sizes },
 		weight: { control: 'inline-radio', options: weights },
 	},
-}
-
-export default meta
+} as Meta<TextStoryArgs>
 
 type TextStoryProps = ComponentProps<typeof Text.Display> &
 	ComponentProps<typeof Text.Heading> &
@@ -42,7 +40,7 @@ type TextStoryProps = ComponentProps<typeof Text.Display> &
 	}
 
 // eslint-disable-next-line react/prop-types
-const Template: Story<TextStoryProps> = ({ componentName, ...args }) => {
+const Template: StoryFn<TextStoryProps> = ({ componentName, ...args }) => {
 	const Component = Text[componentName] || Text.Body
 	return <Component {...args} />
 }
