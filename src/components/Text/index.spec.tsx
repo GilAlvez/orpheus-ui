@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
-import { describe, test } from 'vitest';
+import { describe, it } from 'vitest';
 import { Text } from '.';
 import { textBase } from './styles';
 
@@ -21,42 +21,33 @@ function testTextComponent(componentName: string, Component: any) {
 			textElement = renderTextComponent({});
 		});
 
-		test('should render with correct text content', () => {
-			// Assert
+		it('should render with correct text content', () => {
 			expect(textElement).toHaveTextContent(componentName);
 		});
 
-		test('should have the correct base className', () => {
-			// Arrange
+		it('should have the correct base className', () => {
 			const textHTMLElement = textElement as HTMLElement;
 
-			// Assert
 			expect(textHTMLElement.classList.contains(textBase.className)).toBeTruthy();
 		});
 
-		test('should have the correct default prop in `size`', () => {
-			// Assert
+		it('should have the correct default prop in `size`', () => {
 			expect(textElement).toHaveAttribute('class', expect.stringContaining('size-md'));
 		});
 
-		test('should have the correct `size` value when prop is declared', () => {
-			// Arrange
+		it('should have the correct `size` value when prop is declared', () => {
 			textElement = renderTextComponent({ size: 'lg' });
 
-			// Assert
 			expect(textElement).toHaveAttribute('class', expect.stringContaining('size-lg'));
 		});
 
-		test('should have the correct default prop in `weight`', () => {
-			// Assert
+		it('should have the correct default prop in `weight`', () => {
 			expect(textElement).toHaveAttribute('class', expect.stringContaining('weight-normal'));
 		});
 
-		test('should have the correct `weight` value when prop is declared', () => {
-			// Arrange
+		it('should have the correct `weight` value when prop is declared', () => {
 			textElement = renderTextComponent({ weight: 'bold' });
 
-			// Assert
 			expect(textElement).toHaveAttribute('class', expect.stringContaining('weight-bold'));
 		});
 	});
