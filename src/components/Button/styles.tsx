@@ -51,7 +51,7 @@ export const Button = styled('button', {
 			outlined: {},
 			ghost: {},
 		},
-		disabled: {
+		isDisabled: {
 			true: {
 				pointerEvents: 'none',
 				cursor: 'default',
@@ -109,7 +109,7 @@ export const Button = styled('button', {
 		...colors.map((color) => ({
 			variant: 'filled',
 			color,
-			disabled: false,
+			isDisabled: false,
 			css: {
 				color: '$white',
 				backgroundColor: `$${color}500`,
@@ -129,7 +129,7 @@ export const Button = styled('button', {
 		...colors.map((color) => ({
 			variant: 'outlined',
 			color,
-			disabled: false,
+			isDisabled: false,
 			css: {
 				color: `$${color}500`,
 				backgroundColor: 'transparent',
@@ -152,7 +152,7 @@ export const Button = styled('button', {
 		...colors.map((color) => ({
 			variant: 'ghost',
 			color,
-			disabled: false,
+			isDisabled: false,
 			css: {
 				color: `$${color}500`,
 				backgroundColor: 'transparent',
@@ -170,7 +170,7 @@ export const Button = styled('button', {
 		})),
 		// DISABLED
 		{
-			disabled: true,
+			isDisabled: true,
 			variant: 'filled',
 			css: {
 				backgroundColor: '$gray200',
@@ -179,7 +179,7 @@ export const Button = styled('button', {
 			},
 		},
 		{
-			disabled: true,
+			isDisabled: true,
 			variant: 'outlined',
 			css: {
 				backgroundColor: 'transparent',
@@ -189,7 +189,7 @@ export const Button = styled('button', {
 			},
 		},
 		{
-			disabled: true,
+			isDisabled: true,
 			variant: 'ghost',
 			css: {
 				backgroundColor: 'transparent',
