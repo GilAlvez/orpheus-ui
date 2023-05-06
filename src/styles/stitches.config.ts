@@ -1,9 +1,9 @@
-import type * as Stitches from '@stitches/react'
-import { createStitches, defaultThemeMap } from '@stitches/react'
+import type * as Stitches from '@stitches/react';
+import { createStitches, defaultThemeMap } from '@stitches/react';
 
-import { normalize } from './normalize'
-import * as themeStyles from './theme'
-import * as utils from './utils'
+import { normalize } from './normalize';
+import * as themeStyles from './theme';
+import * as utils from './utils';
 
 export const { styled, css, getCssText, globalCss, keyframes, reset, createTheme, config, prefix, theme } =
 	createStitches({
@@ -30,15 +30,15 @@ export const { styled, css, getCssText, globalCss, keyframes, reset, createTheme
 			...defaultThemeMap,
 			margin: 'extendMargin',
 		},
-	})
+	});
 
-export const dark = 'html.dark &' // CSS selector for dark theme
+export const dark = 'html.dark &'; // CSS selector for dark theme
 createTheme('dark', {
 	...themeStyles,
-})
+});
 
 export const globalStyles = globalCss({
 	...normalize,
-})
+});
 
-export type CSS = Stitches.CSS<typeof config>
+export type CSS = Stitches.CSS<typeof config>;

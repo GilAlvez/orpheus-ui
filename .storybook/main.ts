@@ -1,4 +1,4 @@
-import type { StorybookConfig } from '@storybook/react-vite'
+import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
 	stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -18,13 +18,13 @@ const config: StorybookConfig = {
 	},
 	async viteFinal(config, options) {
 		if (options.configType === 'PRODUCTION') {
-			config.base = '/orpheus-ui/'
+			config.base = '/orpheus-ui/';
 		}
-		return config
+		return config;
 	},
 	docs: {
 		autodocs: true,
 	},
-}
+};
 
-export default config
+export default config;

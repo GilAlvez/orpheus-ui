@@ -127,4 +127,4 @@ export const normalize = {
 	'[hidden]': {
 		display: 'none',
 	},
-}
+};

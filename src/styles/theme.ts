@@ -5,7 +5,7 @@ export const screens = {
 	lg: '(min-width: 1024px)',
 	xl: '(min-width: 1280px)',
 	'2xl': '(min-width: 1536px)',
-} as const
+} as const;
 
 export const colors = {
 	black: '#000',
@@ -77,7 +77,7 @@ export const colors = {
 	warning700: '#A16207',
 	warning800: '#854D0E',
 	warning900: '#713F12',
-} as const
+} as const;
 
 const negativeSpace = {
 	'-px': '-1px',
@@ -101,7 +101,7 @@ const negativeSpace = {
 	'-72': '18rem',
 	'-80': '20rem',
 	'-96': '24rem',
-} as const
+} as const;
 
 export const space = {
 	px: '1px',
@@ -130,13 +130,13 @@ export const space = {
 	72: '18rem',
 	80: '20rem',
 	96: '24rem',
-} as const
+} as const;
 
-export const sizes = { ...space }
+export const sizes = { ...space };
 
 export const fonts = {
 	inter: 'Inter, sans-serif',
-} as const
+} as const;
 
 export const fontSizes = {
 	xs: '0.75rem',
@@ -152,7 +152,7 @@ export const fontSizes = {
 	'7xl': '4.5rem',
 	'8xl': '6rem',
 	'9xl': '8rem',
-} as const
+} as const;
 
 export const fontWeights = {
 	light: '300',
@@ -160,7 +160,7 @@ export const fontWeights = {
 	medium: '500',
 	semibold: '600',
 	bold: '700',
-} as const
+} as const;
 
 export const radii = {
 	none: '0',
@@ -170,7 +170,7 @@ export const radii = {
 	lg: '0.5rem',
 	xl: '0.75rem',
 	full: '9999px',
-} as const
+} as const;
 
 export const borderWidths = {
 	0: '0',
@@ -178,7 +178,7 @@ export const borderWidths = {
 	2: '2px',
 	4: '4px',
 	8: '8px',
-} as const
+} as const;
 
 export const shadows = {
 	xs: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
@@ -189,7 +189,7 @@ export const shadows = {
 	'2xl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
 	inner: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
 	none: '0 0 #0000',
-} as const
+} as const;
 
 export const lineHeights = {
 	none: '1',
@@ -208,7 +208,7 @@ export const lineHeights = {
 	10: '2.5rem',
 	11: '2.75rem',
 	12: '3rem',
-} as const
+} as const;
 
 export const zIndices = {
 	auto: 'auto',
@@ -218,7 +218,7 @@ export const zIndices = {
 	30: '30',
 	40: '40',
 	50: '50',
-} as const
+} as const;
 
 // ------------ EXTENDS ------------ //
 
@@ -226,4 +226,4 @@ export const extendMargin = {
 	auto: 'auto',
 	...space,
 	...negativeSpace,
-}
+};

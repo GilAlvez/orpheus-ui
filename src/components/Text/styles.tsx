@@ -1,4 +1,4 @@
-import { css, styled } from '../../styles/stitches.config'
+import { css, styled } from '../../styles/stitches.config';
 
 export const textBase = css({
 	fontFamily: '$inter',
@@ -22,7 +22,7 @@ export const textBase = css({
 		size: 'md',
 		weight: 'normal',
 	},
-})
+});
 export const Display = styled('h1', textBase, {
 	variants: {
 		size: {
@@ -31,7 +31,7 @@ export const Display = styled('h1', textBase, {
 			sm: { fontSize: '$5xl', lineHeight: '$none' },
 		},
 	},
-})
+});
 
 export const Heading = styled('h2', textBase, {
 	variants: {
@@ -41,7 +41,7 @@ export const Heading = styled('h2', textBase, {
 			sm: { fontSize: '$2xl', lineHeight: '$tight' },
 		},
 	},
-})
+});
 
 export const Title = styled('h2', textBase, {
 	variants: {
@@ -51,7 +51,7 @@ export const Title = styled('h2', textBase, {
 			sm: { fontSize: '$lg', lineHeight: '$snug' },
 		},
 	},
-})
+});
 
 export const Label = styled('label', textBase, {
 	variants: {
@@ -61,7 +61,7 @@ export const Label = styled('label', textBase, {
 			sm: { fontSize: '$xs', lineHeight: '$normal' },
 		},
 	},
-})
+});
 
 export const Body = styled('p', textBase, {
 	variants: {
@@ -71,4 +71,4 @@ export const Body = styled('p', textBase, {
 			sm: { fontSize: '$sm', lineHeight: '$relaxed' },
 		},
 	},
-})
+});

@@ -1,7 +1,7 @@
-import { type Meta, type StoryObj } from '@storybook/react'
-import { Button, type IButtonProps } from '.'
+import { type Meta, type StoryObj } from '@storybook/react';
+import { Button, type IButtonProps } from '.';
 
-import { Plus } from 'phosphor-react'
+import { Plus } from 'phosphor-react';
 
 export default {
 	title: 'Components/Button',
@@ -37,13 +37,13 @@ export default {
 		disabled: false,
 		fullWidth: false,
 	},
-} as Meta<IButtonProps>
+} as Meta<IButtonProps>;
 
 export const Default: StoryObj<IButtonProps> = {
 	args: {
 		children: 'Lorem ipsum.',
 	},
-}
+};
 
 export const AsLink: StoryObj<IButtonProps> = {
 	args: {
@@ -57,11 +57,11 @@ export const AsLink: StoryObj<IButtonProps> = {
 			},
 		},
 	},
-}
+};
 
 export const WithIcon: StoryObj<IButtonProps> = {
 	args: {
 		children: 'With Icon',
 		icon: <Plus />,
 	},
-}
+};

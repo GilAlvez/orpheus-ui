@@ -1,4 +1,4 @@
-import { globalStyles } from './styles/stitches.config'
+import { globalStyles } from './styles/stitches.config';
 
-globalStyles()
-export * from './components'
+globalStyles();
+export * from './components';

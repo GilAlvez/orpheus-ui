@@ -1,7 +1,7 @@
-import { styled } from '../../styles/stitches.config'
+import { styled } from '../../styles/stitches.config';
 
 // Iterable colors that isnt dark, light or disabled
-const colors = ['primary', 'secondary', 'success', 'error', 'warning']
+const colors = ['primary', 'secondary', 'success', 'error', 'warning'];
 
 export const Button = styled('button', {
 	// Layout
@@ -214,7 +214,7 @@ export const Button = styled('button', {
 			},
 		},
 	],
-})
+});
 
 export const Icon = styled('span', {
 	display: 'inline-flex',
@@ -242,4 +242,4 @@ export const Icon = styled('span', {
 	defaultVariants: {
 		size: 'md',
 	},
-})
+});
