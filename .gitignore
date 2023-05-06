@@ -15,3 +15,6 @@ lerna-debug.log*
 
 # Storybook
 storybook-static
+
+# Examples
+example.spec.tsx
