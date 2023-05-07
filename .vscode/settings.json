@@ -10,8 +10,10 @@
 		"source.fixAll.format": true
 	},
 	"workbench.tree.indent": 15,
+	"explorer.compactFolders": false,
+	"scss.lint.unknownAtRules": "ignore",
 	"editor.quickSuggestions": {
 		"strings": true
 	},
-	"explorer.compactFolders": false,
+	"tailwindCSS.experimental.classRegex": [["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]]
 }

@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	text-rendering: optimizeLegibility;
+}
+
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+
+@layer base {
+	body {
+		@apply font-sans antialiased text-gray-900 bg-gray-50;
+	}
+}
