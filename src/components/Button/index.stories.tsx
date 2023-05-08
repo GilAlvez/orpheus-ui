@@ -11,24 +11,18 @@ export default {
 			name: 'text',
 		},
 		color: {
-			options: ['primary', 'secondary', 'success', 'error', 'warning'],
 			control: 'select',
 		},
 		size: {
-			options: ['xs', 'sm', 'md', 'lg', 'xl'],
 			control: 'inline-radio',
 		},
 		variant: {
-			options: ['filled', 'outlined', 'ghost'],
 			control: 'inline-radio',
 		},
 		disabled: { control: 'boolean' },
 		fullWidth: { control: 'boolean' },
-		as: { table: { disable: true } },
-		css: { table: { disable: true } },
 		hasIcon: { table: { disable: true } },
 		icon: { table: { disable: true } },
-		ref: { table: { disable: true } },
 	},
 	args: {
 		color: 'primary',
@@ -42,20 +36,6 @@ export default {
 export const Default: StoryObj<IButtonProps> = {
 	args: {
 		children: 'Lorem ipsum.',
-	},
-};
-
-export const AsLink: StoryObj<IButtonProps> = {
-	args: {
-		as: 'a',
-		children: 'As Link',
-	},
-	argTypes: {
-		as: {
-			table: {
-				disable: false,
-			},
-		},
 	},
 };
 

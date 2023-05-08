@@ -40,40 +40,11 @@ describe('Button', () => {
 		});
 	});
 
-	describe('Polymorphism', () => {
-		it('should render button tag when "as" isnt declared', () => {
-			render(<Button>Click me</Button>);
-			const linkButton = screen.getByText('Click me');
-
-			expect(linkButton.tagName.toLowerCase()).toBe('button');
-		});
-		it('should render correct tag when "as" is declared', () => {
-			render(<Button as="a">Click me</Button>);
-			const linkButton = screen.getByText('Click me');
-
-			expect(linkButton.tagName.toLowerCase()).toBe('a');
-		});
-	});
-
 	describe('Accessibility', () => {
 		it('should call onKeyDown when key is pressed', () => {
 			const onKeyDown = vi.fn();
 			render(<Button onKeyDown={onKeyDown}>Click me</Button>);
 			const button = screen.getByRole('button');
-
-			fireEvent.keyDown(button, { key: 'Enter' });
-			fireEvent.keyDown(button, { key: ' ' });
-			expect(onKeyDown).toHaveBeenCalledTimes(2);
-		});
-
-		it('should call onKeyDown even it isnt a button tag', () => {
-			const onKeyDown = vi.fn();
-			render(
-				<Button as="a" onKeyDown={onKeyDown}>
-					Click me
-				</Button>
-			);
-			const button = screen.getByText('Click me');
 
 			fireEvent.keyDown(button, { key: 'Enter' });
 			fireEvent.keyDown(button, { key: ' ' });

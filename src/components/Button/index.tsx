@@ -1,37 +1,72 @@
-import { type ComponentProps } from '@stitches/react';
-import { useRef, type ElementType, type ReactNode } from 'react';
+import { useRef, type ButtonHTMLAttributes, type HTMLAttributes, type KeyboardEvent, type ReactNode } from 'react';
 
+import clsx from 'clsx';
 import * as S from './styles';
 
-export interface IButtonProps extends Omit<ComponentProps<typeof S.Button>, 'isDisabled'> {
-	// TODO: "as" should replace element props properly
-	as?: ElementType;
+export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+	color?: keyof typeof S.colorsScheme;
+	variant?: keyof typeof S.colorsScheme.primary;
+	size?: keyof typeof S.sizes;
+	fullWidth?: boolean;
 	icon?: ReactNode;
 }
 
-export const Button = (props: IButtonProps) => {
-	const { children, icon, onKeyDown, ref, disabled, ...rest } = props;
-
+export const Button = ({
+	color = 'primary',
+	variant = 'filled',
+	size = 'md',
+	fullWidth,
+	icon,
+	disabled,
+	className,
+	children,
+	onKeyDown,
+	...rest
+}: IButtonProps) => {
 	const buttonRef = useRef<HTMLButtonElement>(null);
 
-	const handleKeyPress = (e: KeyboardEvent) => {
+	const handleKeyPress = (e: KeyboardEvent<HTMLButtonElement>) => {
 		if (e.key === 'Enter' || e.key === ' ') {
 			buttonRef.current?.click();
 		}
 	};
 
 	return (
-		<S.Button
-			hasIcon={!!icon}
-			ref={ref ?? buttonRef}
+		<button
+			className={clsx(
+				S.baseStyles,
+				S.sizes[size],
+				disabled ? S.disabled[variant] : S.colorsScheme[color][variant],
+				fullWidth && 'w-full',
+				className
+			)
+				.replace(/\s+/g, ' ')
+				.trim()}
+			ref={buttonRef}
 			onKeyDown={onKeyDown ?? handleKeyPress}
 			tabIndex={0}
 			disabled={disabled}
-			isDisabled={disabled}
 			{...rest}
 		>
-			{icon && <S.Icon size={props.size}>{icon}</S.Icon>}
+			{icon && <Icon size={size}>{icon}</Icon>}
 			{children}
-		</S.Button>
+		</button>
+	);
+};
+
+interface IIconProps extends HTMLAttributes<HTMLSpanElement> {
+	size?: keyof typeof S.sizes;
+}
+
+const Icon = ({ size = 'md', children, ...rest }: IIconProps) => {
+	return (
+		<span
+			className={clsx(S.iconBaseStyles, S.iconSizes[size], size !== 'xs' && '-ml-2')
+				.replace(/\s+/g, ' ')
+				.trim()}
+			{...rest}
+		>
+			{children}
+		</span>
 	);
 };

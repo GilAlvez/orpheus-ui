@@ -11,6 +11,9 @@ html {
 }
 
 @layer base {
+	* {
+		@apply border-transparent;
+	}
 	body {
 		@apply font-sans antialiased text-gray-900 bg-gray-50;
 	}
