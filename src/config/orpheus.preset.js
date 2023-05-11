@@ -66,6 +66,13 @@ module.exports = {
 			pink: colors.pink,
 			rose: colors.rose,
 		}),
+		fontFamily: {
+			sans: ['Roboto', 'sans-serif'],
+			body: ['Roboto', 'sans-serif'],
+			serif: ['Roboto Slab', 'Roboto Serif', 'Roboto', 'serif'],
+			condensed: ['Roboto Condensed', 'Roboto', 'sans-serif'],
+			mono: ['Roboto Mono', 'Roboto', 'monospace'],
+		},
 	},
 	plugins: [],
 };

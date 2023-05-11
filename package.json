@@ -29,7 +29,7 @@
 	},
 	"devDependencies": {
 		"@babel/core": "^7.21.5",
-		"@fontsource/inter": "^4.5.15",
+		"@fontsource/roboto": "^4.5.8",
 		"@parcel/packager-ts": "^2.8.3",
 		"@parcel/transformer-sass": "^2.8.3",
 		"@parcel/transformer-typescript-types": "^2.8.3",

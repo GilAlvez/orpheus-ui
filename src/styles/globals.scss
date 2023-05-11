@@ -1,20 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 html {
 	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 * {
 	-webkit-tap-highlight-color: transparent;
-}
-
-@layer base {
-	* {
-		@apply border-transparent;
-	}
-	body {
-		@apply font-sans antialiased text-gray-900 bg-gray-50;
-	}
+	border-color: transparent;
 }
