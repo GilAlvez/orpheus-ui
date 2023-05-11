@@ -1,4 +1,5 @@
 import { useRef, type ButtonHTMLAttributes, type HTMLAttributes, type KeyboardEvent, type ReactNode } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import clsx from 'clsx';
 import * as S from './styles';
@@ -33,15 +34,17 @@ export const Button = ({
 
 	return (
 		<button
-			className={clsx(
-				S.baseStyles,
-				S.sizes[size],
-				disabled ? S.disabled[variant] : S.colorsScheme[color][variant],
-				fullWidth && 'w-full',
+			className={twMerge(
+				clsx(
+					S.baseStyles,
+					S.sizes[size],
+					disabled ? S.disabled[variant] : S.colorsScheme[color][variant],
+					fullWidth && 'w-full'
+				)
+					.replace(/\s+/g, ' ')
+					.trim(),
 				className
-			)
-				.replace(/\s+/g, ' ')
-				.trim()}
+			)}
 			ref={buttonRef}
 			onKeyDown={onKeyDown ?? handleKeyPress}
 			tabIndex={0}
