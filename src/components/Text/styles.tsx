@@ -1,9 +1,8 @@
 import { clsx } from 'clsx';
 
 export const baseStyles = clsx(`
-	font-sans,
+	font-sans
 	text-inherit
-	leading-none
 `);
 
 export const weights = {
