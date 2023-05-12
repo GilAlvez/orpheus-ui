@@ -1,16 +1,36 @@
-import { type ElementType, type HTMLAttributes } from 'react';
+import { type HTMLAttributes } from 'react';
 import { twMerge } from 'tailwind-merge';
 import * as S from './styles';
 
+type TextTags =
+	| 'p'
+	| 'span'
+	| 'h1'
+	| 'h2'
+	| 'h3'
+	| 'h4'
+	| 'h5'
+	| 'h6'
+	| 'strong'
+	| 'em'
+	| 'small'
+	| 'label'
+	| 'sub'
+	| 'sup'
+	| 'i'
+	| 'b'
+	| 'u'
+	| 's';
+
 export interface ITextProps extends HTMLAttributes<HTMLElement> {
-	as?: ElementType;
+	as?: TextTags;
 	size?: keyof typeof S.typographScheme.heading;
 	weight?: keyof typeof S.weights;
 }
 
 const createTextComponent = (
 	type: keyof typeof S.typographScheme,
-	defaultElement: ElementType,
+	defaultElement: TextTags,
 	defaultWeight: keyof typeof S.weights
 ) => {
 	const TextComponent = ({
