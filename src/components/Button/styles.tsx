@@ -27,8 +27,6 @@ export const baseStyles = clsx(`
 	outline-offset-0
 	
   active:transition-none
-
-	
 `);
 
 export const sizes = {
