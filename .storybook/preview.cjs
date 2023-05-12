@@ -1,7 +1,6 @@
 import { themes } from '@storybook/theming';
 
-import '../src/styles/globals.scss';
-import './tw.css';
+import './globals.scss';
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
