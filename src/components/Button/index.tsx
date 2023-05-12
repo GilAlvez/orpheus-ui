@@ -1,7 +1,6 @@
 import { useRef, type ButtonHTMLAttributes, type HTMLAttributes, type KeyboardEvent, type ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import clsx from 'clsx';
 import * as S from './styles';
 
 export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -35,14 +34,10 @@ export const Button = ({
 	return (
 		<button
 			className={twMerge(
-				clsx(
-					S.baseStyles,
-					S.sizes[size],
-					disabled ? S.disabled[variant] : S.colorsScheme[color][variant],
-					fullWidth && 'w-full'
-				)
-					.replace(/\s+/g, ' ')
-					.trim(),
+				S.baseStyles,
+				S.sizes[size],
+				disabled ? S.disabled[variant] : S.colorsScheme[color][variant],
+				fullWidth && 'w-full',
 				className
 			)}
 			ref={buttonRef}
@@ -63,12 +58,7 @@ interface IIconProps extends HTMLAttributes<HTMLSpanElement> {
 
 const Icon = ({ size = 'md', children, ...rest }: IIconProps) => {
 	return (
-		<span
-			className={clsx(S.iconBaseStyles, S.iconSizes[size], size !== 'xs' && '-ml-2')
-				.replace(/\s+/g, ' ')
-				.trim()}
-			{...rest}
-		>
+		<span className={twMerge(S.iconBaseStyles, S.iconSizes[size], size !== 'xs' && '-ml-2')} {...rest}>
 			{children}
 		</span>
 	);
