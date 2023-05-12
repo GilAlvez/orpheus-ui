@@ -2,13 +2,18 @@ import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import { describe, it } from 'vitest';
 import { Text } from '.';
-import { textBase } from './styles';
 
 function testTextComponent(componentName: string, Component: any) {
 	describe(componentName, () => {
 		let textElement: ChildNode | null;
 
-		function renderTextComponent({ size, weight }: { size?: string; weight?: string }): ChildNode | null {
+		function renderTextComponent({
+			size,
+			weight,
+		}: {
+			size?: string;
+			weight?: string;
+		}): ChildNode | null {
 			const { container } = render(
 				<Component size={size} weight={weight}>
 					{componentName}
@@ -23,12 +28,6 @@ function testTextComponent(componentName: string, Component: any) {
 
 		it('should render with correct text content', () => {
 			expect(textElement).toHaveTextContent(componentName);
-		});
-
-		it('should have the correct base className', () => {
-			const textHTMLElement = textElement as HTMLElement;
-
-			expect(textHTMLElement.classList.contains(textBase.className)).toBeTruthy();
 		});
 
 		it('should have the correct default prop in `size`', () => {

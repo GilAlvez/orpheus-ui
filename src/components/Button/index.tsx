@@ -1,4 +1,10 @@
-import { useRef, type ButtonHTMLAttributes, type HTMLAttributes, type KeyboardEvent, type ReactNode } from 'react';
+import {
+	useRef,
+	type ButtonHTMLAttributes,
+	type HTMLAttributes,
+	type KeyboardEvent,
+	type ReactNode,
+} from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import * as S from './styles';
@@ -58,7 +64,10 @@ interface IIconProps extends HTMLAttributes<HTMLSpanElement> {
 
 const Icon = ({ size = 'md', children, ...rest }: IIconProps) => {
 	return (
-		<span className={twMerge(S.iconBaseStyles, S.iconSizes[size], size !== 'xs' && '-ml-2')} {...rest}>
+		<span
+			className={twMerge(S.iconBaseStyles, S.iconSizes[size], size !== 'xs' && '-ml-2')}
+			{...rest}
+		>
 			{children}
 		</span>
 	);
