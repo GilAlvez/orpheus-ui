@@ -1,25 +1,50 @@
-import { type ComponentProps } from '@stitches/react';
-import { createElement, type ElementType } from 'react';
-
+import { type ElementType, type HTMLAttributes } from 'react';
+import { twMerge } from 'tailwind-merge';
 import * as S from './styles';
 
-function createTextComponent<T extends ElementType>(componentName: string, component: T) {
-	const Component = (props: ComponentProps<T> & { as?: ElementType }) => {
-		const { children, ...rest } = props;
-
-		return createElement(component, rest, children);
-	};
-	// Sets the display name of the component for easier debugging and identification
-	// of components during development and in the React DevTools hierarchy.
-	Component.displayName = componentName;
-
-	return Component;
+export interface ITextProps extends HTMLAttributes<HTMLElement> {
+	as?: ElementType;
+	size?: keyof typeof S.typographScheme.heading;
+	weight?: keyof typeof S.weights;
 }
 
-const Display = createTextComponent('Display', S.Display);
-const Heading = createTextComponent('Heading', S.Heading);
-const Title = createTextComponent('Title', S.Title);
-const Label = createTextComponent('Label', S.Label);
-const Body = createTextComponent('Body', S.Body);
+const createTextComponent = (
+	type: keyof typeof S.typographScheme,
+	defaultElement: ElementType,
+	defaultWeight: keyof typeof S.weights
+) => {
+	const TextComponent = ({
+		as = defaultElement,
+		size = 'md',
+		weight = defaultWeight,
+		className,
+		children,
+		...props
+	}: ITextProps) => {
+		const Element = as;
+
+		return (
+			<Element
+				className={twMerge(
+					S.baseStyles,
+					S.typographScheme[type][size],
+					S.weights[weight],
+					className
+				)}
+				{...props}
+			>
+				{children}
+			</Element>
+		);
+	};
+
+	return TextComponent;
+};
+
+const Display = createTextComponent('display', 'h1', 400);
+const Heading = createTextComponent('heading', 'h2', 400);
+const Title = createTextComponent('title', 'h2', 500);
+const Label = createTextComponent('label', 'label', 500);
+const Body = createTextComponent('body', 'p', 400);
 
 export const Text = { Display, Heading, Title, Label, Body };

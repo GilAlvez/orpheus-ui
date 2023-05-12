@@ -1,74 +1,46 @@
-import { css, styled } from '../../styles/stitches.config';
+import { clsx } from 'clsx';
 
-export const textBase = css({
-	fontFamily: '$inter',
-	color: 'inherit',
-	lineHeight: 1,
-	variants: {
-		size: {
-			lg: {},
-			md: {},
-			sm: {},
-		},
-		weight: {
-			light: { fontWeight: '$light' },
-			normal: { fontWeight: '$normal' },
-			medium: { fontWeight: '$medium' },
-			semibold: { fontWeight: '$semibold' },
-			bold: { fontWeight: '$bold' },
-		},
-	},
-	defaultVariants: {
-		size: 'md',
-		weight: 'normal',
-	},
-});
-export const Display = styled('h1', textBase, {
-	variants: {
-		size: {
-			lg: { fontSize: '$7xl', lineHeight: '$none' },
-			md: { fontSize: '$6xl', lineHeight: '$none' },
-			sm: { fontSize: '$5xl', lineHeight: '$none' },
-		},
-	},
-});
+export const baseStyles = clsx(`
+	font-sans
+	text-inherit
+`);
 
-export const Heading = styled('h2', textBase, {
-	variants: {
-		size: {
-			lg: { fontSize: '$4xl', lineHeight: '$tight' },
-			md: { fontSize: '$3xl', lineHeight: '$tight' },
-			sm: { fontSize: '$2xl', lineHeight: '$tight' },
-		},
-	},
-});
+export const weights = {
+	100: clsx(`font-thin`),
+	200: clsx(`font-extralight`),
+	300: clsx(`font-light`),
+	400: clsx(`font-normal`),
+	500: clsx(`font-medium`),
+	600: clsx(`font-semibold`),
+	700: clsx(`font-bold`),
+	800: clsx(`font-extrabold`),
+	900: clsx(`font-black`),
+};
 
-export const Title = styled('h2', textBase, {
-	variants: {
-		size: {
-			lg: { fontSize: '$2xl', lineHeight: '$snug' },
-			md: { fontSize: '$xl', lineHeight: '$snug' },
-			sm: { fontSize: '$lg', lineHeight: '$snug' },
-		},
+export const typographScheme = {
+	display: {
+		lg: clsx(`text-7xl`),
+		md: clsx(`text-6xl`),
+		sm: clsx(`text-5xl`),
 	},
-});
-
-export const Label = styled('label', textBase, {
-	variants: {
-		size: {
-			lg: { fontSize: '$base', lineHeight: '$normal' },
-			md: { fontSize: '$sm', lineHeight: '$normal' },
-			sm: { fontSize: '$xs', lineHeight: '$normal' },
-		},
+	heading: {
+		lg: clsx(`text-4xl`),
+		md: clsx(`text-3xl`),
+		sm: clsx(`text-2xl`),
 	},
-});
-
-export const Body = styled('p', textBase, {
-	variants: {
-		size: {
-			lg: { fontSize: '$lg', lineHeight: '$relaxed' },
-			md: { fontSize: '$base', lineHeight: '$relaxed' },
-			sm: { fontSize: '$sm', lineHeight: '$relaxed' },
-		},
+	title: {
+		lg: clsx(`text-2xl`),
+		md: clsx(`text-xl`),
+		sm: clsx(`text-lg`),
 	},
-});
+	label: {
+		lg: clsx(`text-base`),
+		md: clsx(`text-sm`),
+		sm: clsx(`text-xs`),
+	},
+	body: {
+		lg: clsx(`text-lg`),
+		md: clsx(`text-base`),
+		sm: clsx(`text-sm`),
+	},
+};

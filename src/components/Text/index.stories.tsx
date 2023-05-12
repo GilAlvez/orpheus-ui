@@ -1,13 +1,16 @@
-import { type ComponentProps } from '@stitches/react';
 import { type Meta, type StoryFn } from '@storybook/react';
-import { Text } from '.';
+import { Text, type ITextProps } from '.';
 
-interface TextStoryArgs extends ComponentProps<typeof Text.Body> {
+interface TextStoryArgs extends ITextProps {
 	componentName: keyof typeof Text;
 }
 
-const sizes = ['sm', 'md', 'lg'];
-const weights = ['light', 'normal', 'medium', 'semibold', 'bold'];
+type TextStoryProps = ITextProps & {
+	componentName: keyof typeof Text;
+};
+
+const sizes = ['lg', 'md', 'sm'];
+const weights = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
 export default {
 	title: 'Components/Text',
@@ -20,7 +23,7 @@ export default {
 	},
 	args: {
 		size: 'md',
-		weight: 'normal',
+		weight: 400,
 	},
 	argTypes: {
 		componentName: { table: { disable: true } },
@@ -30,14 +33,6 @@ export default {
 		weight: { control: 'inline-radio', options: weights },
 	},
 } as Meta<TextStoryArgs>;
-
-type TextStoryProps = ComponentProps<typeof Text.Display> &
-	ComponentProps<typeof Text.Heading> &
-	ComponentProps<typeof Text.Title> &
-	ComponentProps<typeof Text.Label> &
-	ComponentProps<typeof Text.Body> & {
-		componentName: keyof typeof Text;
-	};
 
 // eslint-disable-next-line react/prop-types
 const Template: StoryFn<TextStoryProps> = ({ componentName, ...args }) => {
@@ -63,7 +58,7 @@ export const Title = Template.bind({});
 Title.args = {
 	componentName: 'Title',
 	children: 'Title Text',
-	weight: 'medium',
+	weight: 500,
 	as: 'h2',
 };
 
@@ -71,7 +66,7 @@ export const Label = Template.bind({});
 Label.args = {
 	componentName: 'Label',
 	children: 'Label Text',
-	weight: 'medium',
+	weight: 500,
 	as: 'label',
 };
 
