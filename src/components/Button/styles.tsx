@@ -28,8 +28,7 @@ export const baseStyles = clsx(`
 	
   active:transition-none
 
-	disabled:pointer-events-none 
-	disabled:cursor-default
+	
 `);
 
 export const sizes = {
@@ -42,21 +41,27 @@ export const sizes = {
 
 export const disabled = {
 	filled: clsx(`
-		disabled:bg-zinc-200 
-		disabled:text-zinc-400
+		bg-gray-200 
+		text-gray-400
 		opacity-80 
+		pointer-events-none 
+		cursor-default
 	`),
 	outlined: clsx(`
-		disabled:bg-transparent
-		disabled:text-zinc-400
-		disabled:border-zinc-300
+		bg-transparent
+		text-gray-400
+		border-gray-300
 		opacity-80 
+		pointer-events-none 
+		cursor-default
 	`),
 	ghost: clsx(`
-		disabled:text-zinc-400
-		disabled:bg-transparent
+		text-gray-400
+		bg-transparent
 		opacity-80 
 		shadow-none
+		pointer-events-none 
+		cursor-default
 	`),
 };
 

@@ -1,10 +1,5 @@
-import {
-	useRef,
-	type ButtonHTMLAttributes,
-	type HTMLAttributes,
-	type KeyboardEvent,
-	type ReactNode,
-} from 'react';
+import { Slot } from '@radix-ui/react-slot';
+import { useRef, type ButtonHTMLAttributes, type KeyboardEvent } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import * as S from './styles';
@@ -14,7 +9,7 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	variant?: keyof typeof S.colorsScheme.primary;
 	size?: keyof typeof S.sizes;
 	fullWidth?: boolean;
-	icon?: ReactNode;
+	asSlot?: boolean;
 }
 
 export const Button = ({
@@ -22,11 +17,11 @@ export const Button = ({
 	variant = 'filled',
 	size = 'md',
 	fullWidth,
-	icon,
 	disabled,
 	className,
 	children,
 	onKeyDown,
+	asSlot,
 	...rest
 }: IButtonProps) => {
 	const buttonRef = useRef<HTMLButtonElement>(null);
@@ -34,11 +29,16 @@ export const Button = ({
 	const handleKeyPress = (e: KeyboardEvent<HTMLButtonElement>) => {
 		if (e.key === 'Enter' || e.key === ' ') {
 			buttonRef.current?.click();
+			if (asSlot) {
+				buttonRef.current?.blur();
+			}
 		}
 	};
 
+	const Comp = asSlot ? Slot : 'button';
+
 	return (
-		<button
+		<Comp
 			className={twMerge(
 				S.baseStyles,
 				S.sizes[size],
@@ -48,27 +48,11 @@ export const Button = ({
 			)}
 			ref={buttonRef}
 			onKeyDown={onKeyDown ?? handleKeyPress}
-			tabIndex={0}
+			tabIndex={disabled ? -1 : 0}
 			disabled={disabled}
 			{...rest}
 		>
-			{icon && <Icon size={size}>{icon}</Icon>}
 			{children}
-		</button>
-	);
-};
-
-interface IIconProps extends HTMLAttributes<HTMLSpanElement> {
-	size?: keyof typeof S.sizes;
-}
-
-const Icon = ({ size = 'md', children, ...rest }: IIconProps) => {
-	return (
-		<span
-			className={twMerge(S.iconBaseStyles, S.iconSizes[size], size !== 'xs' && '-ml-2')}
-			{...rest}
-		>
-			{children}
-		</span>
+		</Comp>
 	);
 };
