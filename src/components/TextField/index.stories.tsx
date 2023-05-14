@@ -19,7 +19,7 @@ export default {
 		placeholder: 'Type here...',
 		size: 'md',
 		disabled: false,
-		classNames: { container: 'w-1/4' },
+		classNames: { container: 'md:w-1/2 xl:w-1/4' },
 	},
 } as Meta<ITextFieldProps>;
 
