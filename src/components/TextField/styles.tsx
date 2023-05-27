@@ -37,14 +37,13 @@ export const baseStyles = {
     disabled:text-gray-400
   `),
 	error: clsx(`
+    block
+    transition-all
     select-none
-    absolute 
-    right-0
-    -bottom-[1.1rem] 
     text-red-500 
+    mt-1
     text-xs
     tracking-wide 
-    whitespace-nowrap
   `),
 	icon: clsx(`
     h-fit
@@ -54,7 +53,7 @@ export const baseStyles = {
     my-auto 
     left-3
     text-gray-400
-    text-xl
+    text-2xl
   `),
 };
 
