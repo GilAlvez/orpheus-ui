@@ -42,6 +42,8 @@ export const TextField = forwardRef<HTMLInputElement, ITextFieldProps>((props, r
 						S.baseStyles.input,
 						S.sizes[size],
 						!!error && S.errorState.input,
+						!!togglePasswordVisibility && 'pr-10',
+						!!icon && 'pl-10',
 						classNames?.input
 					)}
 					disabled={disabled}
