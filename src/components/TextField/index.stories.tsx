@@ -1,3 +1,4 @@
+import { Envelope } from '@phosphor-icons/react';
 import { type Meta, type StoryObj } from '@storybook/react';
 import { TextField } from '.';
 import { type ITextFieldProps } from './types';
@@ -41,6 +42,16 @@ export const PasswordField: StoryObj<ITextFieldProps> = {
 	argTypes: {
 		label: { table: { disable: false } },
 		togglePasswordVisibility: { table: { disable: false } },
+	},
+};
+export const WithIcon: StoryObj<ITextFieldProps> = {
+	args: {
+		label: 'With Icon',
+		icon: <Envelope />,
+	},
+	argTypes: {
+		label: { table: { disable: false } },
+		icon: { table: { disable: false } },
 	},
 };
 export const ErrorState: StoryObj<ITextFieldProps> = {
