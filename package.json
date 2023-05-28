@@ -19,7 +19,10 @@
 		"format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss}\"",
 		"coverage": "vitest run --coverage",
 		"build-storybook": "storybook build",
-		"deploy-storybook": "storybook-to-ghpages"
+		"deploy-storybook": "storybook-to-ghpages",
+		"pub:major": "npm version major && npm publish",
+		"pub:minor": "npm version minor && npm publish",
+		"pub:patch": "npm version patch && npm publish"
 	},
 	"dependencies": {
 		"@phosphor-icons/react": "^2.0.9",
