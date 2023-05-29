@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
-## [0.1.0] - 2023-05-27
+## [0.2.0] - 2023-05-28
 
 ### Added
 
@@ -16,5 +16,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - `Button` component for user interactions, with various style variants.
 - `withOrpheus` utility to override Tailwind styles.
 
-[Unreleased]: https://github.com/GilAlvez/orpheus-ui/compare/v0.1.0...develop
-[0.1.0]: https://github.com/GilAlvez/orpheus-ui/releases/tag/v0.1.0
+[Unreleased]: https://github.com/GilAlvez/orpheus-ui/compare/v0.2.0...develop
+[0.2.0]: https://github.com/GilAlvez/orpheus-ui/releases/tag/v0.2.0
