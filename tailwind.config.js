@@ -4,5 +4,5 @@ export default {
 	content: ['./src/**/*.{js,ts,jsx,tsx}'],
 	presets: [require('./src/config/orpheus.preset.js')],
 	theme: {},
-	plugins: [],
+	plugins: [require('@headlessui/tailwindcss')],
 };
